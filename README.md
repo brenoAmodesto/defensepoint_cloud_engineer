@@ -153,9 +153,9 @@ terraform destroy
 |           |                                 |                         |
 |           +-------------+   +---------------+                         |
 |                         |   |                                         |
-|                     +---v---v---+                                    |
-|                     |  NAT GW   |                                    |
-|                     +-----------+                                    |
+|                     +---v---v---+                                     |
+|                     |  NAT GW   |                                     |
+|                     +-----------+                                     fix |
 |                                                                       |
 |  [Security Group: Only outbound allowed, no SSH/RDP]                  |
 |  [IAM Role: SSM Managed Instance Core]                                |
