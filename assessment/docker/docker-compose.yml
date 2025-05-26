@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  wazuh:
+    image: wazuh/wazuh:latest
+    container_name: wazuh
+    restart: always
+    ports:
+      - "55000:55000"
+      - "1514:1514/udp"
+    environment:
+      - TZ=UTC
+    volumes:
+      - wazuh_data:/var/ossec/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:55000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  wazuh_data:
+    driver: local
