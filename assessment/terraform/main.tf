@@ -47,7 +47,7 @@ module "iam_ssm-dev" {
 module "ec2-wazuh-dev" {
   source = "./ec2/ec2_dev"
 
-  ami_id                = "ami-0c55b159cbfafe1f0" # Substitua pela AMI correta
+  ami_id                = "ami-0c55b159cbfafe1f0" 
   instance_type         = "t3.xlarge"
   subnet_id             = module.vpc-dev.private_subnet_ids[0]
   security_group_ids    = [module.sg-dev.security_group_id]
